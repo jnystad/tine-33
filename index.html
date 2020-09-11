@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="nb">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tine 33 år!</title>
+    <style type="text/css">
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            text-align: center;
+            background: #083D77;
+            color: #fff;
+        }
+
+        html {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        body>.unmask {
+            opacity: 0;
+        }
+
+        body>.unmasked {
+            animation: appear 400ms ease-out;
+            animation-fill-mode: forwards;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 500;
+        }
+
+        h1 {
+            background: #F4D35E;
+            color: #222;
+            padding: 10px 20px;
+            font-size: 48px;
+            transform: rotate(-10deg);
+            z-index: 2;
+            position: relative;
+        }
+
+        h2,
+        h3 {
+            background: #DA4167;
+            color: #fff;
+            padding: 20px;
+            transform: rotate(8deg);
+            margin: 50px 0 30px;
+            font-size: 28px;
+            z-index: 1;
+            position: relative;
+        }
+
+        h3 {
+            transform: rotate(-8deg);
+            margin-bottom: 0;
+            font-size: 36px;
+        }
+
+        p {
+            font-size: 28px;
+            margin: 20px 15px;
+            background: #EBEBD3;
+            color: #222;
+            padding: 15px 20px;
+            transform: rotate(-3deg);
+        }
+
+        #revealBtn {
+            background: #678D58;
+            color: #fff;
+            font-size: 25px;
+            padding: 10px 20px;
+            border: 2px dotted #fff;
+            cursor: pointer;
+            margin: 200px 0;
+            transition: opacity ease-out 500ms;
+        }
+
+        #map {
+            overflow: hidden;
+            border-radius: 20px;
+            margin: 20px;
+        }
+
+        #gift {
+            animation: appear 1s ease-out;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: scale(0.5) rotate(-15deg);
+                top: 0;
+            }
+
+            to {
+                opacity: 1;
+                top: 0;
+            }
+        }
+
+        .img {
+            display: inline-block;
+            width: 80%;
+            height: 0;
+            padding-bottom: 80%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 100%;
+        }
+
+        .img img {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        :root {
+            --stripe-size: 100px;
+            --color1: #285D97;
+            --color2: #083D77;
+            --duration: 2s;
+        }
+
+        .stripe {
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+        }
+
+        .stripe::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: calc(100% + var(--stripe-size));
+            height: 100%;
+            background: repeating-linear-gradient(45deg,
+                    var(--color2) 25%,
+                    var(--color2) 50%,
+                    var(--color1) 50%,
+                    var(--color1) 75%);
+            background-size: var(--stripe-size) var(--stripe-size);
+            animation: stripeTransform var(--duration) linear infinite;
+        }
+
+        .stripe::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(#1b2735, 0) 0%, #090a0f 100%);
+        }
+
+        @keyframes stripeTransform {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(var(--stripe-size) * -1));
+            }
+        }
+
+        @keyframes stripeBackgroundPosition {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: calc(var(--stripe-size) * -1) 0;
+            }
+        }
+    </style>
+    <script src="x.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="stripe"></div>
+    <p style="opacity: 0; margin: 0"></p>
+    <div class="img unmask"><img src="1.jpg" /></div>
+    <h1 class="unmask">Tine <big>33</big> år!</h1>
+    <h2 class="unmask">Gratulerer med dagen!</h2>
+    <div class="img unmask"><img src="2.jpg" /></div>
+    <p class="unmask">Vi ønsker deg en fantastisk fin bursdag!</p>
+    <h2 class="unmask">Et <big>cadeaubon</big> til deg!</h2>
+    <p class="unmask">Vi håper årets bursdagsgave vil gi deg (og Kees) en god opplevelse.<br /><br />⬇⬇⬇</p>
+    <h3 class="unmask">High Tea for 2 at Anne&Max</h3>
+    <video loop="" muted="" data-autoplay="" autoplay="" class="unmask" style="display: inline-block; width: 100%;">
+        <source data-src="https://www.annemax.nl/wp-content/uploads/2019/09/hightea-27.mp4" type="video/mp4"
+            src="https://www.annemax.nl/wp-content/uploads/2019/09/hightea-27.mp4">
+    </video>
+    <div class="unmask" id="map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2457.5046031620686!2d5.906194716537399!3d51.97945587971546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c7a5ca822e433b%3A0x752536f21587abcf!2sAnne%20%26%20Max!5e0!3m2!1sno!2sno!4v1599815242596!5m2!1sno!2sno"
+            width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+            tabindex="0"></iframe>
+    </div>
+    <p class="unmask">(Gavekort kommer på e-post)</p>
+    <h2 class="unmask">Stor klem fra Erik, Jørgen og Vincent!</h2>
+    <div class="img unmask"><img src="3.jpg" /></div>
+    <br>
+    <br>
+    <br>
+    <span>❤</span>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    Fin
+    <script type="text/javascript">init();</script>
+</body>
+
+</html>
